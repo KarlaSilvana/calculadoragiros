@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Giros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https: //fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+<body>
+    <div id="contenedor">
+        <div id="calculadoraBien">
+
+            <h2>Calculadora Giros</h2>
+    
+            <div class="caja">
+                <label for="Monto">Ingrese el Monto de Total CoreBank: </label>
+                <input id="Monto" type="text">
+                <button onclick="MontoGiro()">Calcular</button>
+                <p id="mensaje"></p>
+            </div>
+
+            <div class="caja principal">
+                
+                <h6>Monto Giro</h6> 
+                <div><p id="giroBn"></p></div>
+                <h6> Comisión</h6> 
+                <div><p id="ComisionBN"></p></div>
+                <h6>ITF</h6> 
+                <div><p id="ItfBN"></p></div>
+                <h6>Redondeo</h6> 
+                <div><p id="RedondeoBN"></p></div>
+                <h6>Monto Total</h6> 
+                <div><p id="MontoTotalBN"></p></div>
+                <!--
+                <label for="giroBn">MONTO GIRO: </label> 
+                <input id="giroBn" type="text"> <br><br>
+
+                <label for="ComisionBN">COMISION: </label> 
+                <input id="ComisionBN" type="text"> <br><br>
+        
+                <label for="ItfBN">ITF: </label>
+                <input id="ItfBN" type="text" ><br><br>
+        
+                <label for="RedondeoBN">REDONDEO: </label>
+                <input id="RedondeoBN" type="text" ><br><br>
+        
+                <label for="MontoTotalBN">MONTO TOTAL: </label>
+                <input id="MontoTotalBN" type="text" ><br><br>-->
+            </div>
+    
+            <div class="caja">
+                <label for="MontoRecibo">MONTO DE RECIBO DE EGRESO: </label>
+                <input id="MontoRecibo" type="text" ><br>
+            </div>        
+        </div>
+
+        <div class="imagen">
+            <div class="Imga"></div>
+        </div>
+    
+
+        <script src="calculadora.js"></script>
+    </div>
+</body>
+</html>

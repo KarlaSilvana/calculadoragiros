@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: linear-gradient(to right, #2980B9,#6DD5FA, #FFFFFF);
+    
+}
+#contenedor{
+    display: flex;
+    width: 60%;
+    max-width: 100%;
+    min-height: 400px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    
+}
+#calculadoraBien {
+    display: flex;
+    flex-wrap: wrap;
+    width: 45%;
+}
+h2, .caja {
+    width: 100%;
+}
+h2{
+    text-align: center;
+    font-family: "Reddit Mono", monospace;
+    width: 100%;
+    margin: 25px;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+.caja button{
+    background-color: #FF287A;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 35px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 100%;
+    margin: 0 0 25px 0;;
+}
+.caja button:hover{
+    background-color: #FFDF64;
+}
+
+.caja{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 0 35px;
+    
+
+}
+.caja label{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: bold;
+    color: #FF287A;
+}
+.caja input{
+    width: 100%;
+    margin: 8px 0;
+    padding: 0 8px;
+    height: 29px;
+    border-radius: 7px;
+    outline: none;
+    border-color: #eee;
+
+}
+.principal {
+    padding: 0 35px;
+}
+
+
+.principal div {
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 0 8px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+
+}
+.caja h6 {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+.imagen{
+    flex-grow: 1;
+    background-color: #00C3F9;
+    border-radius: 150px 20px 20px 150px;
+    padding: 30px 30px 30px 65px;
+}
+.Imga{
+    width: 100%;
+    height: 100%;
+    background-image: url(iman.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
