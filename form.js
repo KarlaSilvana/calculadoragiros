@@ -108,7 +108,7 @@ function MontoGiro(){
     let montos = parseFloat(document.getElementById("Monto").value);
 
     if(montos<=1000){
-        document.getElementById("mensaje").innerHTML="Montos menores a 1000 no necesita usar la calculadora";
+        document.getElementById("mensaje").innerHTML="Montos iguales o menores a 1000 no necesita usar la calculadora";
     }else {        
         calculadoraCoreBank(montos);
 
