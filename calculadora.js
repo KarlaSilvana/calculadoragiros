@@ -27,6 +27,7 @@ function comision(MG){//COMISION DOS DECIMALES REDONDEO
 function itf(MG){//ITF DOS DECIMALES
     let itf;
     itf = (parseInt(MG/1000))*0.05;
+    itf = parseInt(itf*100)/100; //ESTEE-------------------
     return itf;
 }
 
@@ -40,7 +41,10 @@ function redondeo(MG, valor, MT){// REDONDEO DEPENDIENDO DE LOS DECIMALES CON VA
         let vari1 = (parseInt((MG + comi2 + itf2)*valor)-parseInt(MG + comi2 + itf2)*valor)/valor;
         vari1 = (vari1*10)-parseInt(vari1*10);
         vari1 = vari1/10;
-    
+       // vari1 = parseInt(vari1*100)/100;//ESTEE-------------------
+        
+        vari1 = Math.round(vari1*100)/100;
+
         return vari1;
 
     } else{
@@ -49,6 +53,8 @@ function redondeo(MG, valor, MT){// REDONDEO DEPENDIENDO DE LOS DECIMALES CON VA
         let vari1 = (parseInt((MT + comi2 + itf2)*valor)-parseInt(MT + comi2 + itf2)*valor)/valor;
         vari1 = (vari1*10)-parseInt(vari1*10);
         vari1 = vari1/10;
+
+      // vari1 = parseInt(vari1*100)/100; //ESTEE-------------------
     
         return vari1;
     }
@@ -64,22 +70,17 @@ function calculadoraBN(MG){ // CALCULO CORRECTO DE GIROS
 
     let montoTotalBN = parseInt((MG+comisionBN+itfBN-redondeoBN)*100)/100;
 
-    document.getElementById("giroBn").innerHTML=MG;
-    document.getElementById("ComisionBN").innerHTML=comisionBN;
-    document.getElementById("ItfBN").innerHTML=itfBN;
-    document.getElementById("RedondeoBN").innerHTML=redondeoBN;
-    document.getElementById("MontoTotalBN").innerHTML=montoTotalBN;
-/*
+    montoTotalBN = Math.round (montoTotalBN*10)/10;
+
     document.getElementById("giroBn").value = MG;
     document.getElementById("ComisionBN").value = comisionBN;
     document.getElementById("ItfBN").value = itfBN;
     document.getElementById("RedondeoBN").value = redondeoBN;
-    document.getElementById("MontoTotalBN").value = montoTotalBN;*/
+    document.getElementById("MontoTotalBN").value = montoTotalBN;
 
     return montoTotalBN;
 
 }
-
 function calculadoraCoreBank(MG){ // CALCULO DEL COREBANK
     
     let MontoTotalBn = MG;
@@ -98,50 +99,28 @@ function calculadoraCoreBank(MG){ // CALCULO DEL COREBANK
     montoGiroCB = montoTotalCB-comisionCoreB + redondeoCB;
     montoGiroCB = Math.round(montoGiroCB*10)/10;
 
+
     console.log(montoTotalCB);
     console.log(comisionCoreB);
     console.log(redondeoCB);
     console.log(montoGiroCB);
-    
-
 
     let monTotal = calculadoraBN(montoGiroCB);
+  //  document.getElementById("MontoRecibo").value = parseInt((MontoTotalBn-monTotal)*100)/100;
+    document.getElementById("MontoRecibo").value = (Math.round((MontoTotalBn-monTotal)*100))/100;
 
-   // document.getElementById("MontoTotalBN").value = montoTotalBN;
-    document.getElementById("MontoRecibo").value = MontoTotalBn-monTotal;
-    //console.log(comision(29555.300));
-    //console.log(itf(29555.300));
-
-    /*
-    itfCB2=itf(montoTotalCB);
-    montoTotalCB = montoTotalCB-itfCB2;
-    comisionCoreB = comisionCB(montoTotalCB);
-    redondeoCB = redondeo(montoTotalCB, 1000, MontoTotalBn);
-    montoGiroCB = montoTotalCB-comisionCoreB + redondeoCB;
-    montoGiroCB = Math.round(montoGiroCB*10)/10;
-
-*/
-      
 
 }
-
 
 function MontoGiro(){
 
     let montos = parseFloat(document.getElementById("Monto").value);
 
     if(montos<=1000){
-        document.getElementById("mensaje").innerHTML="No necesita usar la calculadora";
+        document.getElementById("mensaje").innerHTML="Montos iguales o menores a 1000 no necesita usar la calculadora";
     }else {        
         calculadoraCoreBank(montos);
 
     }
 
 }
-
-
-//console.log(comision(29555.300));
-//console.log(itf(29555.300));
-//console.log(redondeo(29555.300));
-//console.log(parseInt((29555.30+comision(29555.300)+itf(29555.300)-redondeo(29555.300))*100)/100);
-
