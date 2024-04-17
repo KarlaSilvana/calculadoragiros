@@ -139,11 +139,3 @@ function MontoGiro(){
     }
 
 }
-
-
-//console.log(comision(29555.300));
-//console.log(itf(29555.300));
-//console.log(redondeo(29555.300));
-//console.log(parseInt((29555.30+comision(29555.300)+itf(29555.300)-redondeo(29555.300))*100)/100);
-
-
