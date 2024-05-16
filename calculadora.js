@@ -1,7 +1,7 @@
 
 function comisionCB(MG){//COMISION SIN DOS DECIMALES
     if(MG<=1000){
-        return 0;
+        return 5;
     } else if(MG<=10000){
         MG = MG*0.005;
         return (Math.round(MG*1000))/1000;
@@ -14,7 +14,7 @@ function comisionCB(MG){//COMISION SIN DOS DECIMALES
 
 function comision(MG){//COMISION DOS DECIMALES REDONDEO
     if(MG<=1000){
-        return 0;
+        return 5;
     } else if(MG<=10000){
         MG = MG*0.005;
         return (Math.round(MG*100))/100;
@@ -131,7 +131,7 @@ function MontoGiro(){
 
     let montos = parseFloat(document.getElementById("Monto").value);
 
-    if(montos<=1000){
+    if(montos<1000){
         document.getElementById("mensaje").innerHTML="No necesita usar la calculadora";
     }else {        
         calculadoraCoreBank(montos);
